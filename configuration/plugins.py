@@ -17,6 +17,6 @@ PLUGINS_CONFIG = {
         "diode_username": "diode",
 
         # netbox-to-diode client_secret created during diode bootstrap.
-        "netbox_to_diode_client_secret": "uYytVxfDmIb8iUeMreCOfThsx1h7ws8faAfkSthhWWM="
+        "netbox_to_diode_client_secret": "kM6y6efgsQBzNr9JZw+ZNEtWd1w3L8VZ2v3vPNgPP1c="
     },
 }
