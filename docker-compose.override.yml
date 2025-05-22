@@ -9,10 +9,10 @@ services:
       context: .
       dockerfile: Dockerfile-Plugins
     volumes:
-    - /volume1/docker/netbox:/etc/netbox/config:z,ro
-    - netbox-media-files:/opt/netbox/netbox/media:z,rw
-    - netbox-reports-files:/opt/netbox/netbox/reports:z,rw
-    - netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
+    - /volume1/docker/netbox/config:/etc/netbox/config:z,ro
+    - /volume1/docker/netbox/netbox-media-files:/opt/netbox/netbox/media:z,rw
+    - /volume1/docker/netbox/netbox-reports-files:/opt/netbox/netbox/reports:z,rw
+    - /volume1/docker/netbox/netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
     healthcheck:
       retries: 15
   netbox-worker:
@@ -20,14 +20,14 @@ services:
     pull_policy: never
     volumes:
     - /volume1/docker/netbox:/etc/netbox/config:z,ro
-    - netbox-media-files:/opt/netbox/netbox/media:z,rw
-    - netbox-reports-files:/opt/netbox/netbox/reports:z,rw
-    - netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
+    - /volume1/docker/netbox/netbox-media-files:/opt/netbox/netbox/media:z,rw
+    - /volume1/docker/netbox/netbox-reports-files:/opt/netbox/netbox/reports:z,rw
+    - /volume1/docker/netbox/netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
   netbox-housekeeping:
     image: netbox:latest-plugins
     pull_policy: never
     volumes:
     - /volume1/docker/netbox:/etc/netbox/config:z,ro
-    - netbox-media-files:/opt/netbox/netbox/media:z,rw
-    - netbox-reports-files:/opt/netbox/netbox/reports:z,rw
-    - netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
+    - /volume1/docker/netbox/netbox-media-files:/opt/netbox/netbox/media:z,rw
+    - /volume1/docker/netbox/netbox-reports-files:/opt/netbox/netbox/reports:z,rw
+    - /volume1/docker/netbox/netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
